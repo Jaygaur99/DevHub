@@ -9,6 +9,10 @@ const cors = require("cors");
 const compression = require("compression");
 const httpsServer = require("http").createServer(app);
 
+// Import Routes
+const home = require("./Routes/home");
+const user = require("./Routes/user");
+
 // Adding middleware
 app.use(morgan("tiny"));
 app.use(express.json({ limit: "10mb" }));
@@ -29,6 +33,8 @@ app.use(
 app.use(compression());
 
 // Adding Routes
+app.use("/api", home);
+app.use("/api", user);
 
 // Socket.io configuration
 
