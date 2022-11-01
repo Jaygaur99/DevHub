@@ -12,6 +12,7 @@ const httpsServer = require("http").createServer(app);
 // Import Routes
 const home = require("./Routes/home");
 const user = require("./Routes/user");
+const rooms = require("./Routes/rooms");
 
 // Adding middleware
 app.use(morgan("tiny"));
@@ -35,6 +36,7 @@ app.use(compression());
 // Adding Routes
 app.use("/api", home);
 app.use("/api", user);
+app.use("/api/room", rooms);
 
 // Socket.io configuration
 
