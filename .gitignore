@@ -3,3 +3,5 @@ frontend/node_modules/
 
 backend/.env
 frontend/.env
+
+backend/Models/DummyData.csv
