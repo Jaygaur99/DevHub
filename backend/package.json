@@ -1,5 +1,5 @@
 {
-  "name": "dev-house",
+  "name": "dev-hub",
   "version": "1.0.0",
   "description": "A code editor and podcast studio for developers",
   "main": "index.js",
@@ -17,16 +17,8 @@
     "mongo",
     "db"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/1SAURABHKUMAR1/Dev-House.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/1SAURABHKUMAR1/Dev-House/issues"
-  },
-  "homepage": "https://github.com/1SAURABHKUMAR1/Dev-House#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cloudinary": "^1.30.0",
