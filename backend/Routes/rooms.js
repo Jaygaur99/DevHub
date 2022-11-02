@@ -1,17 +1,17 @@
-const router = require("express").Router();
+const router = require('express').Router();
 
-const isLoggedIn = require("../Middleware/isLoggedIn.js");
+const isLoggedIn = require('../Middleware/isLoggedIn');
 
 const {
-  createRoom,
-  getRooms,
-  singleRoom,
-  verifyRoomPassword,
-} = require("../Controllers/roomsControllers.js");
+    createRoom,
+    getRooms,
+    singleRoom,
+    verifyRoomPassword,
+} = require('../Controllers/roomsController');
 
-router.route("/create").post(isLoggedIn, createRoom);
-router.route("/rooms").get(getRooms);
-router.route("/single/:roomId").get(isLoggedIn, singleRoom);
-router.route("/verify/:roomId").post(isLoggedIn, verifyRoomPassword);
+router.route('/room/create').post(isLoggedIn, createRoom);
+router.route('/room/rooms').get(getRooms);
+router.route('/room/single/:roomId').get(isLoggedIn, singleRoom);
+router.route('/room/verify/:roomId').post(isLoggedIn, verifyRoomPassword);
 
 module.exports = router;

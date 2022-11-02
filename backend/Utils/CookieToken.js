@@ -8,37 +8,38 @@
 */
 
 const cookieToken = async (user, res) => {
-  const accessJwtToken = await user.getAccessToken();
-  const refreshJwtToken = await user.getRefreshToken();
+    const accessJwtToken = await user.getAccessToken();
+    const refreshJwtToken = await user.getRefreshToken();
 
-  const refreshCookieOptions = {
-    expires: new Date(
-      Date.now() + process.env.REFRESH_COOKIE_EXPIRE_DAY * 24 * 60 * 60 * 1000
-    ),
-    httpOnly: true,
-    secure: true,
-    sameSite: "none",
-  };
+    const refreshCookieOptions = {
+        expires: new Date(
+            Date.now() +
+                30 * 24 * 60 * 60 * 1000,
+        ),
+        httpOnly: true,
+        secure: true,
+        sameSite: 'none',
+    };
 
-  const accessCookieOptions = {
-    expires: new Date(
-      Date.now() + process.env.ACCESS_COOKIE_EXPIRE_DAY * 60 * 1000
-    ),
-    httpOnly: true,
-    secure: true,
-    sameSite: "none",
-  };
+    const accessCookieOptions = {
+        expires: new Date(
+            Date.now() + 30 * 60 * 1000,
+        ),
+        httpOnly: true,
+        secure: true,
+        sameSite: 'none',
+    };
 
-  user.password = undefined;
-
-  return res
-    .status(200)
-    .cookie("refresh", refreshJwtToken, refreshCookieOptions)
-    .cookie("access", accessJwtToken, accessCookieOptions)
-    .json({
-      success: true,
-      user,
-    });
+    user.password = undefined;
+    console.log(refreshJwtToken, refreshCookieOptions, accessJwtToken, accessCookieOptions);
+    return res
+        .status(200)
+        .cookie('refresh', refreshJwtToken, refreshCookieOptions)
+        .cookie('access', accessJwtToken, accessCookieOptions)
+        .json({
+            success: true,
+            user,
+        });
 };
 
 module.exports = cookieToken;

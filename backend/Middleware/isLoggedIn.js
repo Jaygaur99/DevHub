@@ -4,6 +4,7 @@ const User = require("../Models/User");
 const jwt = require("jsonwebtoken");
 
 const isLoggedIn = BigPromise(async (req, res, next) => {
+  console.log(req.cookies);
   let accessToken = req.cookies?.access;
 
   if (!accessToken && req.header("Authorization"))

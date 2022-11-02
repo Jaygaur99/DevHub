@@ -1,7 +1,8 @@
 {
-  "name": "frontend",
+  "name": "dev-house",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3000",
   "dependencies": {
     "@chakra-ui/icons": "^2.0.1",
     "@chakra-ui/react": "^2.1.2",
@@ -49,13 +50,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "extends": "react-app"
   },
   "browserslist": {
     "production": [
@@ -68,5 +68,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "@testing-library/cypress": "^8.0.3",
+    "@types/path-browserify": "^1.0.0",
+    "cypress": "^10.10.0",
+    "cypress-file-upload": "^5.0.8"
   }
 }

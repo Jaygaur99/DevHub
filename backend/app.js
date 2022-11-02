@@ -1,44 +1,58 @@
-require("dotenv").config();
-const express = require("express");
+require('dotenv').config();
+const express = require('express');
 const app = express();
-const cookieParser = require("cookie-parser");
-const fileUpload = require("express-fileupload");
-const morgan = require("morgan");
-const helmet = require("helmet");
-const cors = require("cors");
-const compression = require("compression");
-const httpsServer = require("http").createServer(app);
+const cookieParser = require('cookie-parser');
+const fileUpload = require('express-fileupload');
+const morgan = require('morgan');
+const cors = require('cors');
+const helmet = require('helmet');
+const { Server } = require('socket.io');
+const httpsServer = require('http').createServer(app);
+const socketRoom = require('./Socket/socketRoom');
+const compression = require('compression');
 
-// Import Routes
-const home = require("./Routes/home");
-const user = require("./Routes/user");
-const rooms = require("./Routes/rooms");
-
-// Adding middleware
-app.use(morgan("tiny"));
-app.use(express.json({ limit: "10mb" }));
-app.use(express.urlencoded({ limit: "10mb", extended: true }));
+app.use(morgan('tiny'));
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ limit: '10mb', extended: true }));
 const corsOption = {
-  origin: process.env.CLIENT_URL,
-  credentials: true,
+    origin: "http://localhost:3000",
+    credentials: true,
 };
 app.use(cors(corsOption));
+//  app.use(cors());
 app.use(helmet());
 app.use(cookieParser());
 app.use(
-  fileUpload({
-    useTempFiles: true,
-    tempFileDir: "/tmp/",
-  })
+    fileUpload({
+        useTempFiles: true,
+        tempFileDir: '/tmp/',
+    }),
 );
 app.use(compression());
 
-// Adding Routes
-app.use("/api", home);
-app.use("/api", user);
-app.use("/api/room", rooms);
+app.set('view engine', 'ejs');
+app.get('/', (req, res) => {
+    res.render('home');
+});
 
-// Socket.io configuration
+const home = require('./Routes/home');
+const user = require('./Routes/user');
+const rooms = require('./Routes/rooms');
+const codebox = require('./Routes/codebox');
+
+app.use('/api/v1', home);
+app.use('/api/v1', user);
+app.use('/api/v1', rooms);
+app.use('/api/v1', codebox);
+
+const io = new Server(httpsServer, {
+    cors: {
+        origin: process.env.CLIENT_URL,
+        methods: ['GET', 'POST', 'PUT', 'OPTIONS'],
+        credentials: true,
+    },
+});
+socketRoom(io);
 
 exports.app = app;
 exports.httpsServer = httpsServer;

@@ -1,8 +1,6 @@
-const home = (req, res) => {
-  res.status(200).json({
-    success: true,
-    message: "Working",
-  });
+exports.homeWelcome = (req, res) => {
+    res.status(200).json({
+        success: true,
+        body: 'Hello and working',
+    });
 };
-
-module.exports = home;
