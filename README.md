@@ -48,14 +48,17 @@
 
 #### 👨‍💻 Reach out to us !
 
-<br>
+<div styles="display: flex; ">
 
-dev 1
+Fahad Khan: 
 <a href="https://www.linkedin.com/in/fahadkhan313/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" width="100px"/></a>
-dev 2
-<a href="https://www.linkedin.com/in/jaygaur99/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" width="100px"/></a>
-dev 3
-<a href="https://www.linkedin.com/in/harsh-singh-kushwah-a04a6a1b7/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" width="100px"/></a>
-dev 4
-<a href="https://www.linkedin.com/in/abhishek-hesh-1217671b2/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" width="100px"/></a>
 
+Jay Kumar Gaur:
+<a href="https://www.linkedin.com/in/jaygaur99/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" width="100px"/></a>
+
+Harsh Singh Kushwah: 
+<a href="https://www.linkedin.com/in/harsh-singh-kushwah-a04a6a1b7/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" width="100px"/></a>
+
+Abhishek Hesh:
+<a href="https://www.linkedin.com/in/abhishek-hesh-1217671b2/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" width="100px"/></a>
+ </div>
