@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.472e8380.css",
+    "main.js": "/static/js/main.4629605b.js",
+    "static/media/LeagueMono-SemiBold.woff2": "/static/media/LeagueMono-SemiBold.6c3cb7d99c05b52bac77.woff2",
+    "static/media/LeagueMono-Regular.woff2": "/static/media/LeagueMono-Regular.db3b8a851babfcb98c53.woff2",
+    "static/media/LeagueMono-Bold.woff2": "/static/media/LeagueMono-Bold.0f92691a0b864e9515c7.woff2",
+    "index.html": "/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.472e8380.css",
+    "static/js/main.4629605b.js"
+  ]
+}
