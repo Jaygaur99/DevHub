@@ -6,8 +6,6 @@
 
 > A code editor and chitchat studio for developers built with ReactJS , NodeJS , MongoDB , Express, Redux Toolkit , Webrtc , Esbuild , React Query , Socket.io and Typescript
 
-## [Live Demo](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
-
 ## Services We Provide
 
 - User Authorization
